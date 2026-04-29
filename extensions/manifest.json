@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Meet QoE Monitor",
+  "version": "1.0",
+  "description": "Detects Google Meet video ON/OFF state and reports it to the QoE monitoring server.",
+
+  "permissions": [],
+
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "http://localhost:5000/*",
+    "https://*.ngrok-free.app/*",
+    "https://*.ngrok.io/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
